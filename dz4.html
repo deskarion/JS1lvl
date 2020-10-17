@@ -1,0 +1,65 @@
+<script type="text/javascript"> 
+   
+/**
+  1. Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, надо получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 надо получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+*/
+const maxnumber = 999;
+const Informnumber = {
+    number: promt('Введите число от 0 до',maxnumber),
+    units: 0,
+    tens: 0,
+    hundreds: 0,
+};
+if (Informnumber.number <= 9){
+    Informnumber.units = Informnumber.number;
+
+} else if (Informnumber.number <= maxnumber) {
+  Informnumber.units = Math.floor(Informnumber.number % 10);
+  Informnumber.tens = Math.floor(Informnumber.number / 10 % 10);
+  Informnumber.hundreds = Math.floor(Informnumber.number / 100 % 10);
+
+} else {
+  Informnumber.number = 0;
+  console.log("Вы ввели число больше диапазона от 0 до -",maxnumber);
+}
+console.log(Informnumber);
+
+
+/**
+2.Продолжить работу с интернет-магазином:
+В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?
+Реализуйте такие объекты.
+Перенести функционал подсчета корзины на объектно-ориентированную базу.
+
+На дополнительный плюс - реализовать класс корзины. Свойство - сама корзина (массив). Методы - подсчет стоимости, добавление товара в корзину. */
+
+let VideoCard = {
+    serial: 'RTX' ,
+    cost: 400,
+    product: 'gigabyte',
+};
+let Motherboard = {
+    serial: 'gaming' ,
+    cost: 420,
+    product: 'asus',
+};
+let power = {
+    serial: 'active' ,
+    cost: 563,
+    product: 'gigabyte',
+};
+const basket = [power.cost,Motherboard.cost,VideoCard.cost];
+function countBasketPrice(id){
+    let sum = 0;
+    for(let i = 0; i < id.length; i++)
+    {
+        sum += id[i];
+    }
+    console.log(sum);
+}
+countBasketPrice(basket);
+
+
+
+
+</script>
