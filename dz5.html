@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<title>dz5</title>
+	</head>
+
+	<body>
+	<div class="container" id="cont">
+		<script>
+/** 1. Создать функцию, генерирующую шахматную доску. При этом можно использовать любые html-теги по своему желанию. Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки.
+*(дополнительно)Строки должны нумероваться числами от 1 до 8, столбцы – латинскими буквами A, B, C, D, E, F, G, H. */
+
+			const container = document.querySelector(".container");
+			container.style.background = "yellow";
+			container.style.width = "660px";
+			container.style.height = "660px";
+			container.style.paddingLeft = "60px";
+			container.style.paddingBottom = "60px";
+			container.style.margin = "0 auto";
+			container.style.display = "flex";
+			container.style.flexWrap = "wrap";
+				
+			function my_initiation () {
+				const cell = document.createElement ("div");
+				cell.className="cell";
+				cont.append(cell);
+				cell.style.width = "60px";
+				cell.style.height = "60px";
+				cell.style.margin = "0px";
+				cell.style.padding = "0px";
+				cell.style.fontSize = "40px";
+				cell.style.fontWeight = "bold";
+				cell.style.textAlign = "center";
+				
+			}
+			window.onload = my_initiation;
+			
+			for (let n=0; (n!=121); n++) {
+				window.onload = my_initiation ();
+			};
+			let colorBack = "yellow"
+			let masCell = document.querySelectorAll (".cell");
+			for (let i=0; (i<masCell.length); i++) {
+				let c;
+				if (i%2==0)	{
+					c="dimgrey";
+				} else {
+					c="bisque";
+					}
+				masCell[i].style.background=c;
+				if ((i>33) && (i<42)) {
+					masCell[i].innerText = "П";
+				};
+				if ((i>88) && (i<97)) {
+					masCell[i].innerText = "П";
+				};
+				
+				masCell[23].innerText = "Л";
+				masCell[24].innerText = "К";
+				masCell[25].innerText = "С";
+				masCell[26].innerText = "Ф";
+				masCell[27].innerText = "К";
+				masCell[28].innerText = "С";
+				masCell[29].innerText = "К";
+				masCell[30].innerText = "Л";	
+				
+				masCell[100].innerText = "Л";
+				masCell[101].innerText = "К";
+				masCell[102].innerText = "С";
+				masCell[103].innerText = "Ф";
+				masCell[104].innerText = "К";
+				masCell[105].innerText = "С";
+				masCell[106].innerText = "К";
+				masCell[107].innerText = "Л";
+				
+				for (let f=89; (f<108); f++) {
+					masCell[f].style.color = "white";
+				}
+				for (let f=0; (f<22); f++) {
+					masCell[f].style.background = colorBack;
+				}
+				for (let f=110; (f<121); f++) {
+					masCell[f].style.background = colorBack;
+				}
+					
+				masCell[22].style.background = colorBack;
+				masCell[33].style.background = colorBack;
+				masCell[44].style.background = colorBack;
+				masCell[55].style.background = colorBack;
+				masCell[66].style.background = colorBack;
+				masCell[77].style.background = colorBack;
+				masCell[88].style.background = colorBack;
+				masCell[99].style.background = colorBack;
+				masCell[31].style.background = colorBack;
+				masCell[32].style.background = colorBack;
+				masCell[42].style.background = colorBack;
+				masCell[43].style.background = colorBack;
+				masCell[53].style.background = colorBack;
+				masCell[54].style.background = colorBack;
+				masCell[64].style.background = colorBack;
+				masCell[65].style.background = colorBack;
+				masCell[75].style.background = colorBack;
+				masCell[76].style.background = colorBack;
+				masCell[86].style.background = colorBack;
+				masCell[87].style.background = colorBack;
+				masCell[97].style.background = colorBack;
+				masCell[98].style.background = colorBack;
+				masCell[108].style.background = colorBack;
+				masCell[109].style.background = colorBack;
+				
+				masCell[12].innerText = "A";
+				masCell[13].innerText = "B";
+				masCell[14].innerText = "C";
+				masCell[15].innerText = "D";
+				masCell[16].innerText = "E";
+				masCell[17].innerText = "F";
+				masCell[18].innerText = "G";
+				masCell[19].innerText = "H";
+				masCell[111].innerText = "A";
+				masCell[112].innerText = "B";
+				masCell[113].innerText = "C";
+				masCell[114].innerText = "D";
+				masCell[115].innerText = "E";
+				masCell[116].innerText = "F";
+				masCell[117].innerText = "G";
+				masCell[118].innerText = "H";
+				
+				masCell[97].style.color = "black";
+				masCell[99].style.color = "black";
+				
+				masCell[22].innerText = "1";
+				masCell[33].innerText = "2";
+				masCell[44].innerText = "3";
+				masCell[55].innerText = "4";
+				masCell[66].innerText = "5";
+				masCell[77].innerText = "6";
+				masCell[88].innerText = "7";
+				masCell[99].innerText = "8";
+				masCell[31].innerText = "1";
+				masCell[42].innerText = "2";
+				masCell[53].innerText = "3";
+				masCell[64].innerText = "4";
+				masCell[75].innerText = "5";
+				masCell[86].innerText = "6";
+				masCell[97].innerText = "7";
+				masCell[108].innerText = "8";
+			}
+			
+		</script>
+		</div>
+	</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+/**
+2.2. Делаем корзину. Есть массив с товарами. Делаем блок с корзиной. Выводим каждый товар в этом блоке. Под списком товаров выводим их цену.
+Список (html) формируем динамически, как это делали с меню на занятии. */
+	let VideoCard = {
+    serial: 'RTX' ,
+    cost: 400,
+    product: 'gigabyte',
+};
+let Motherboard = {
+    serial: 'gaming' ,
+    cost: 420,
+    product: 'asus',
+};
+let power = {
+    serial: 'active' ,
+    cost: 563,
+    product: 'gigabyte',
+};
+
+let basket_price = 0;
+Basket = [{name: 'Power',price: power.cost}, {name: 'Motherboard',price: Motherboard.cost}];
+Basket.push({name:'VideoCard', price:VideoCard.cost});
+function countBasketPrice(x) {
+    for (i=0; i<Basket.length; i++) { 
+        basket_price = basket_price + Basket[i].price;
+    }
+    return basket_price;
+}
+document.write('<h2>В корзине:</h2>');
+for (i=0;i<Basket.length;i++){document.write(Basket[i].name + ' — ' + Basket[i].price +' USD</br>');}
+document.write('</br><b>Стоимость заказа: '+countBasketPrice(Basket)+ 'USD</b>');
+</script>
+</body>
+</html>
